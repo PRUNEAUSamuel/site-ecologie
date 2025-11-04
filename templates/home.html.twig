@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<h1 class="text-3xl font-bold mb-4">Bienvenue sur Site Écologie</h1>
+
+<!-- Carousel -->
+<div class="relative w-full max-w-3xl mx-auto">
+    <div class="carousel relative overflow-hidden rounded-lg">
+        <img src="https://picsum.photos/800/300?1" class="w-full carousel-item">
+        <img src="https://picsum.photos/800/300?2" class="w-full carousel-item hidden">
+        <img src="https://picsum.photos/800/300?3" class="w-full carousel-item hidden">
+    </div>
+</div>
+
+<script>
+let index = 0;
+const slides = document.querySelectorAll('.carousel-item');
+setInterval(() => {
+    slides[index].classList.add('hidden');
+    index = (index + 1) % slides.length;
+    slides[index].classList.remove('hidden');
+}, 3000);
+</script>
+{% endblock %}

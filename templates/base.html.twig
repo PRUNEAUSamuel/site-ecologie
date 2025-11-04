@@ -1,16 +1,55 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Site Écologie{% endblock %}</title>
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        {% block javascripts %}
-        {% endblock %}
-    </head>
-    <body>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+    {% block navbar %}
+    <nav class="bg-green-600 p-4 px-8 text-white">
+        <div class="flex justify-between items-center">
+            <a href="{{ path('home') }}" class="font-bold text-xl w-2/6 h-full flex">
+                <img src="https://picsum.photos/800/300?1" class="pr-4 max-w-[80px] max-h-[80px]">
+                <p class="">Site Dim</p>
+            </a>
+            <div>
+                <a href="{{ path('home') }}" class="px-3 hover:underline">Accueil</a>
+                <a href="{{ path('about') }}" class="px-3 hover:underline">À propos</a>
+                <a href="{{ path('contact') }}" class="px-3 hover:underline">Contact</a>
+                <a href="" class="px-3 hover:scale-120 duration-150"><svg xmlns="http://www.w3.org/2000/svg" class="fill-blue-400 size-9" viewBox="0 0 640 640"><path d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></a>
+                <!-- Menu déroulant -->
+                <div class="inline-block relative">
+                    <button class="px-3 hover:underline">Plus</button>
+                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white border rounded shadow">
+                        <li><a class="px-4 py-2 block hover:bg-gray-200" href="{{ path('legal') }}">Mentions légales</a></li>
+                        <li><a class="px-4 py-2 block hover:bg-gray-200" href="{{ path('privacy') }}">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
+
+    <!-- Main content -->
+    <main class="mx-auto py-8">
         {% block body %}{% endblock %}
-    </body>
+    </main>
+
+    <!-- Footer -->
+    {% block footer %}
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        &copy; {{ "now"|date("Y") }} Site Écologie. Tous droits réservés.
+    </footer>
+    {% endblock %}
+
+    {% block javascripts %}{% endblock %}
+</body>
 </html>
