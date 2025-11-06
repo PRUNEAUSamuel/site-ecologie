@@ -1,26 +1,55 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Accueil - Nom{% endblock %}
 
 {% block body %}
-<h1 class="text-3xl font-bold mb-4">Bienvenue sur Site Écologie</h1>
+<section class="text-center py-10 bg-yellow-100">
+  <h2 class="text-2xl font-semibold mb-4">Et si on avançait ensemble vers un futur souhaitable ?</h2>
 
-<!-- Carousel -->
-<div class="relative w-full max-w-3xl mx-auto">
-    <div class="carousel relative overflow-hidden rounded-lg">
-        <img src="https://picsum.photos/800/300?1" class="w-full carousel-item">
-        <img src="https://picsum.photos/800/300?2" class="w-full carousel-item hidden">
-        <img src="https://picsum.photos/800/300?3" class="w-full carousel-item hidden">
+  <!-- Carrousel -->
+  <div class="relative w-full max-w-3xl mx-auto">
+    <div class="overflow-hidden rounded-lg">
+      <div class="flex transition-transform duration-700 ease-in-out" id="carousel">
+        <img src="/images/slide1.jpg" class="w-full" alt="Image 1">
+        <img src="/images/slide2.jpg" class="w-full" alt="Image 2">
+        <img src="/images/slide3.jpg" class="w-full" alt="Image 3">
+      </div>
     </div>
-</div>
+    <div class="flex justify-center mt-2 space-x-2">
+      <button class="dot w-3 h-3 bg-gray-400 rounded-full"></button>
+      <button class="dot w-3 h-3 bg-gray-400 rounded-full"></button>
+      <button class="dot w-3 h-3 bg-gray-400 rounded-full"></button>
+    </div>
+  </div>
+</section>
 
-<script>
-let index = 0;
-const slides = document.querySelectorAll('.carousel-item');
-setInterval(() => {
-    slides[index].classList.add('hidden');
-    index = (index + 1) % slides.length;
-    slides[index].classList.remove('hidden');
-}, 3000);
-</script>
+<section class="text-center py-10">
+  <p class="max-w-2xl mx-auto mb-10">Nom accompagne les entreprises, collectivités, associations... sur les sujets de transition écologique, sociale, éthique et heureuse.</p>
+
+  <div class="flex flex-wrap justify-center gap-6">
+    <div class="border p-6 rounded-lg w-64">
+      <h3 class="font-semibold mb-2">Éveiller aux enjeux écologiques</h3>
+      <p>Blablabla de présentation</p>
+    </div>
+    <div class="border p-6 rounded-lg w-64">
+      <h3 class="font-semibold mb-2">Changer de regard et réenchanter les imaginaires</h3>
+      <p>Blablabla de présentation</p>
+    </div>
+    <div class="border p-6 rounded-lg w-64">
+      <h3 class="font-semibold mb-2">Replacer l’humain au centre</h3>
+      <p>Blablabla de présentation</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gray-50 py-10 text-center">
+  <h3 class="font-semibold mb-4">Dimitri Latimier</h3>
+  <p>Ingénieur en agronomie, blablabla</p>
+  <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">En savoir +</button>
+</section>
+
+<section class="text-center py-10">
+  <h3 class="font-semibold mb-4">Témoignages clients</h3>
+  <p>★★★★★ 4.9 / 5</p>
+</section>
 {% endblock %}
