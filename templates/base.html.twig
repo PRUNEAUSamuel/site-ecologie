@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Nom - Accueil{% endblock %}</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="js/carousel.js"></script>
+  <script defer src="js/dropdown.js"></script>
 </head>
 <body class="bg-white text-gray-800 flex flex-col min-h-screen">
   <!-- Navbar -->
   <nav class="bg-white shadow-md p-4 px-8">
     <div class="flex justify-between items-center">
       <!-- Logo -->
-      <div class="flex items-center space-x-4">
+      <a href="{{ path('home') }}" class="flex items-center space-x-4">
         <img src="/images/logo.png" alt="Logo" class="w-10 h-10">
         <span class="font-semibold text-lg">Nom</span>
-      </div>
+      </a>
 
       <!-- Bouton menu (mobile) -->
       <button id="menu-btn" class="block sm:hidden focus:outline-none">
@@ -30,7 +32,7 @@
         <a href="{{ path('about') }}" class="hover:text-green-600">À propos</a>
         <a href="{{ path('home') }}" class="hover:text-green-600">Offre</a>
         <a href="{{ path('contact') }}" class="hover:text-green-600">Contact</a>
-        <a href="https://www.linkedin.com/feed"><svg class="fill-[#0A66C2] max-h-[24px] min-w-[24px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></a>
+        <a target= »_blank » href="https://www.linkedin.com/feed"><svg class="fill-[#0A66C2] max-h-[24px] min-w-[24px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></a>
       </div>
     </div>
 
@@ -39,15 +41,15 @@
       <a href="{{ path('about') }}" class="block text-gray-700 hover:text-green-600 text-center">À propos</a>
       <a href="{{ path('home') }}" class="block text-gray-700 hover:text-green-600 text-center">Offre</a>
       <a href="{{ path('contact') }}" class="block text-gray-700 hover:text-green-600 text-center">Contact</a>
-      <a href="https://www.linkedin.com/feed" class="block"><svg class="fill-[#0A66C2] max-h-[24px] justify-self-center" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></a>
+      <a target= »_blank » href="https://www.linkedin.com/feed" class="block"><svg class="fill-[#0A66C2] max-h-[24px] justify-self-center" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></a>
     </div>
   </nav>
 
-<script>
-  document.getElementById('menu-btn').addEventListener('click', () => {
-    document.getElementById('menu').classList.toggle('hidden');
-  });
-</script>
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('menu').classList.toggle('hidden');
+    });
+  </script>
 
   <main class="flex-grow">
     {% block body %}{% endblock %}
