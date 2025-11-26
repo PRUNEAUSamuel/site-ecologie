@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Présentation - Nom{% endblock %}
+
+{% block body %}
+
+<section class="max-w-6xl mx-auto py-16 px-6">
+
+  <!-- Qui suis-je -->
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+
+    <!-- Photo -->
+    <div class="flex justify-center">
+      <div class="w-64 h-64 rounded-full bg-[#F7EAC2] flex items-center justify-center text-xl text-gray-600 border">
+        Photo de moi
+      </div>
+    </div>
+
+    <!-- Texte -->
+    <div>
+      <h2 class="text-center font-semibold text-2xl border border-gray-700 py-2 mb-6">
+        Qui suis-je ?
+      </h2>
+
+      <p class="text-gray-700 leading-relaxed">
+        Humain engagé pour le vivant au sens large, je dédie mon énergie pour semer 
+        des graines d’éveil auprès des individus comme des structures professionnelles.  
+        Je combine l’approche écologique et les approches sociologique et psychologique 
+        pour un traitement plus sensible des problématiques actuelles et à venir.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Mes valeurs -->
+  <div class="mt-20 text-center">
+    <h3 class="inline-block border border-gray-800 px-6 py-2 font-medium text-xl">
+      Mes valeurs
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-10 mt-12">
+
+      <!-- Valeur 1 -->
+      <div class="flex flex-col items-center">
+        <div class="w-28 h-28 rounded-full border border-gray-700"></div>
+        <p class="mt-3 font-semibold">Humain</p>
+        <p class="italic text-gray-600 text-sm">Parce que …</p>
+      </div>
+
+      <!-- Valeur 2 -->
+      <div class="flex flex-col items-center">
+        <div class="w-28 h-28 rounded-full border border-gray-700"></div>
+        <p class="mt-3 font-semibold">Rigueur</p>
+        <p class="italic text-gray-600 text-sm">Parce que …</p>
+      </div>
+
+      <!-- Valeur 3 -->
+      <div class="flex flex-col items-center">
+        <div class="w-28 h-28 rounded-full border border-gray-700"></div>
+        <p class="mt-3 font-semibold">Connexion</p>
+        <p class="italic text-gray-600 text-sm">Parce que …</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mon parcours -->
+  <div class="mt-20">
+    <h3 class="inline-block border border-gray-800 px-6 py-2 font-medium text-xl">
+      Mon parcours
+    </h3>
+
+    <p class="mt-6 text-gray-700">
+      Reprendre les idées de mon CV et de mes lettres de motivation et les mettre ici.
+      <br><br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. 
+      Donec nec urna ut arcu pharetra hendrerit. Vivamus feugiat lorem id arcu 
+      vehicula, et feugiat velit faucibus.
+    </p>
+
+    <div class="text-center mt-10">
+      <a href="#" class="px-6 py-2 border border-gray-700 rounded hover:bg-gray-100 transition">
+        Mon CV
+      </a>
+    </div>
+  </div>
+
+</section>
+
+{% endblock %}
